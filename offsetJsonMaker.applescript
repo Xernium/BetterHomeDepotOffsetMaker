@@ -15,7 +15,7 @@ set offset_count to 13
 # We need some devices to query the offsets from, one for each processor:
 
 set target_device_list to {"iPhone4,1", "iPhone5,1", "iPad3,1", "iPad3,4", "iPad2,4"}
-set processor_list to {"S5L8940", "S5L8950", "S5L8945", "S5L8955", "S5L8942"}
+set processor_list to {"S5L8940X", "S5L8950X", "S5L8945X", "S5L8955X", "S5L8942X"}
 set device_count to length of target_device_list
 
 set jsonpath to (quoted form of POSIX path of (get path to home folder) & "/Desktop/offsets.json") as string
