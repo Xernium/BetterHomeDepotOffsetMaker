@@ -1,4 +1,4 @@
-# We have both RELEASE_ARM_ and Marijuan_ARM_ .....
+# We have both RELEASE_ARM_ and MarijuanARM_ .....
 
 set krnver_list to {"Darwin Kernel Version 15.0.0: Fri Oct 2 14:07:07 PDT 2015; root:xnu-3248.10.42~4/", "Darwin Kernel Version 15.0.0: Fri Nov 13 16:08:07 PST 2015; root:xnu-3248.21.2~1/", "Darwin Kernel Version 15.0.0: Wed Dec 9 22:19:38 PST 2015; root:xnu-3248.31.3~2/", "Darwin Kernel Version 15.4.0: Fri Feb 19 13:54:52 PST 2016; root:xnu-3248.41.4~28/", "Darwin Kernel Version 15.5.0: Mon Apr 18 16:44:07 PDT 2016; root:xnu-3248.50.21~4/", "Darwin Kernel Version 15.6.0: Mon Jun 20 20:10:21 PDT 2016; root:xnu-3248.60.9~1/"}
 
@@ -35,7 +35,7 @@ repeat with current_device from 1 to device_count by 1
 			do shell script ("echo " & (quoted form of ("Error! The following offsets failed to be correctly recieved: " & (item current_device of target_device_list) & "-" & (item current_fw of fw_list) & ", Recieved " & (count paragraphs of response) & " but expected " & offset_count & " offsets!")) & " >> " & ((quoted form of POSIX path of (get path to home folder)) & "/Desktop/mkoffsets.log"))
 		else
 			set eb_c_kernel_string to ((item (item current_fw of fw_krnl_vers) of krnver_list) & "RELEASE_ARM_" & item current_device of processor_list) as string
-			set running_c_kernel_string to ((item (item current_fw of fw_krnl_vers) of krnver_list) & "Marijuan_ARM_" & item current_device of processor_list) as string
+			set running_c_kernel_string to ((item (item current_fw of fw_krnl_vers) of krnver_list) & "MarijuanARM_" & item current_device of processor_list) as string
 			do shell script {"echo " & (quoted form of ("  \"" & eb_c_kernel_string & "\":")) & " >> " & jsonpath}
 			do shell script {"echo " & (quoted form of ("   [\"" & item 1 of resp_paragraph & "\",")) & " >> " & jsonpath}
 			repeat with current_offset from 2 to (offset_count - 1) by 1
